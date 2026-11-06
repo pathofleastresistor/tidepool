@@ -1,8 +1,13 @@
 # Tidepool
 
-A small, hackable Electron desktop app for chatting with Claude through your own MCP servers, with
-full support for **MCP Apps** (interactive UIs that servers ship as `ui://` resources). The goal is a
-client you control end to end, so you can explore what MCP Apps can do.
+A small, hackable desktop app that is a shared place where **humans, agents and websites or
+services interact**. You chat, an agent works alongside you, and the sites and MCP servers you use
+are right there too: pinned in the sidebar, rendered inline as **MCP Apps** (interactive UIs that
+servers ship as `ui://` resources), and open to the agent through the tools they expose. It is a
+client you control end to end, so you can explore what that three-way collaboration can look like.
+
+Today the built-in agent is Claude (through your own Anthropic API key); the app, its tools and its
+MCP and WebMCP plumbing are not specific to it.
 
 ![Chat with an MCP App rendered inline](docs/screenshot.png)
 

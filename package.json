@@ -2,7 +2,7 @@
   "name": "tidepool",
   "productName": "Tidepool",
   "version": "0.1.0",
-  "description": "A hackable desktop MCP client with a Claude chat interface and MCP Apps support",
+  "description": "A hackable desktop place where humans, agents and websites or services interact, built on MCP and MCP Apps",
   "main": "./out/main/index.js",
   "author": "Amit Varia",
   "license": "MIT",
