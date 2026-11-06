@@ -94,9 +94,19 @@ Keychain via Electron `safeStorage`. Alternatively, launch with `ANTHROPIC_API_K
 
 ### Install it as an app
 
+Download an installer for your platform from the
+[Releases](https://github.com/pathofleastresistor/tidepool/releases) page: `.dmg` (macOS, Apple
+silicon or Intel), `.exe` (Windows) or `.AppImage` / `.deb` (Linux). None of them are signed, so
+macOS and Windows will warn on first launch (see below). Or build one yourself:
+
 ```bash
-npm run dist:mac     # → dist/tidepool-0.1.0-arm64.dmg (and -x64)
+npm run dist:mac     # → dist/tidepool-0.1.0-mac-arm64.dmg (and -x64)
+npm run dist:win     # → dist/tidepool-0.1.0-win-x64.exe (build on Windows)
+npm run dist:linux   # → dist/tidepool-0.1.0-linux-x64.AppImage and .deb (build on Linux)
 ```
+
+On Windows, SmartScreen shows "Windows protected your PC": choose **More info**, then **Run anyway**.
+Voice input and the Chrome import are macOS-only.
 
 Open the `.dmg` and drag **Tidepool** into Applications. The build is unsigned. If macOS refuses to
 open it ("damaged" or "can't be opened"), clear the quarantine flag and ad-hoc sign it:
@@ -329,7 +339,10 @@ changes) makes macOS ask again, because the local build is ad-hoc signed.
 | `npm run dev` | Electron with hot reload (renderer) and auto-restart (main, preload) |
 | `npm run typecheck` | TypeScript for main, preload and renderer |
 | `npm run build` | Production bundle into `out/` |
-| `npm run dist:mac` | Build `.dmg` installers into `dist/` |
+| `npm run dist:mac` / `dist:win` / `dist:linux` | Build installers for that OS into `dist/` (build on the matching OS) |
+
+To cut a release, bump `version` in `package.json`, then push a matching tag (`git tag v0.1.1 && git push origin v0.1.1`). The Release workflow builds all three platforms and attaches the installers to a GitHub release.
+
 | `node tests/e2e-webmcp.mjs` | End-to-end test for WebMCP page tools against a local fake shop and a mock Claude API (after `npm run build`) |
 | `npm run test:e2e` | End-to-end smoke test against a mock Claude API and the example server (no API key needed) |
 | `node tests/e2e-assistant.mjs` | End-to-end test for Claude's app tools, the check before opening pages, history, chat search and memory (after `npm run build`) |

@@ -27,4 +27,25 @@ mac:
     NSMicrophoneUsageDescription: Tidepool listens so you can talk to Claude hands-free.
     NSSpeechRecognitionUsageDescription: Tidepool turns what you say into chat messages, on this Mac.
 dmg:
-  artifactName: ${name}-${version}-${arch}.${ext}
+  artifactName: ${name}-${version}-mac-${arch}.${ext}
+win:
+  target:
+    - target: nsis
+      arch: [x64, arm64]
+  # Unsigned: SmartScreen warns on first run ("More info" > "Run anyway").
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: ${name}-${version}-win-${arch}.${ext}
+linux:
+  category: Development
+  maintainer: Amit Varia <amit@amitvaria.com>
+  target:
+    - target: AppImage
+      arch: [x64, arm64]
+    - target: deb
+      arch: [x64, arm64]
+appImage:
+  artifactName: ${name}-${version}-linux-${arch}.${ext}
+deb:
+  artifactName: ${name}-${version}-linux-${arch}.${ext}
