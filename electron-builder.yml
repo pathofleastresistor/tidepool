@@ -1,0 +1,30 @@
+appId: dev.pathofleastresistor.tidepool
+productName: Tidepool
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**
+  - package.json
+  - '!**/node_modules/*/{CHANGELOG.md,README.md,readme.md,test,__tests__,tests}'
+extraResources:
+  # The on-device speech helper (npm run build:speech). Lives outside the asar so it can run.
+  - from: resources/bin
+    to: bin
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+  # Ad-hoc signed ("-"): runs on this Mac, but Gatekeeper still warns elsewhere.
+  # To distribute, install a Developer ID certificate, drop this line and notarize.
+  identity: '-'
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  # The speech helper runs with the app as its "responsible process", so macOS checks the
+  # app's Info.plist too: without these keys it kills the helper outright (exit 134).
+  extendInfo:
+    NSMicrophoneUsageDescription: Tidepool listens so you can talk to Claude hands-free.
+    NSSpeechRecognitionUsageDescription: Tidepool turns what you say into chat messages, on this Mac.
+dmg:
+  artifactName: ${name}-${version}-${arch}.${ext}

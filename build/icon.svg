@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Tidepool app icon: the Junction mark on a macOS-grid tile (824px body, 100px margin). -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#0d1411"/>
+  <g transform="translate(224 219.2) scale(4.8)">
+    <rect x="47" y="31" width="26" height="73" rx="13" fill="#3fcf8e"/>
+    <rect x="14" y="18" width="92" height="26" rx="13" fill="#eef3ef"/>
+    <circle cx="27" cy="31" r="7" fill="#ffb81c"/>
+    <circle cx="93" cy="31" r="7" fill="#2a64e0"/>
+    <circle cx="60" cy="91" r="6" fill="#0d1411"/>
+  </g>
+</svg>

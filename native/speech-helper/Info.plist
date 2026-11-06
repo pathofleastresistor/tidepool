@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Embedded into the helper binary (__TEXT,__info_plist). macOS refuses privacy-protected
+     APIs to a process whose Info.plist doesn't explain why it needs them. -->
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key>
+  <string>dev.pathofleastresistor.tidepool.speech-helper</string>
+  <key>CFBundleName</key>
+  <string>Tidepool Speech</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Tidepool listens so you can talk to Claude hands-free.</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>Tidepool turns what you say into chat messages, on this Mac.</string>
+</dict>
+</plist>
