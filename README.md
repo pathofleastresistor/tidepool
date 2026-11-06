@@ -9,7 +9,7 @@ client you control end to end, so you can explore what that three-way collaborat
 Today the built-in agent is Claude (through your own Anthropic API key); the app, its tools and its
 MCP and WebMCP plumbing are not specific to it.
 
-![Chat with an MCP App rendered inline](docs/screenshot.png)
+![An agent planning a grocery list on Corner Market, a website that exposes its tools to it, with the chat beside the page](docs/screenshot.png)
 
 ## Features
 
